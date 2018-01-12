@@ -1,1 +1,14 @@
 split array[n] into m part with balance
+strategy:
+	calc the average on m:
+		sum = array[0] + ... + array[n-1];
+		average = sum / average;
+	sort array in ascend
+	scanning the sorted array from end to begin:
+		every vector of parts[0], parts[1], ... parts[m-1] have a sum
+		if(partSum[currentVector] + array[i] <= average)
+			parts[currentVector].push_back(array[i]);
+		else
+			break for loop;
+		from 0 to index(where jump out of loop)
+			parts[currentVector].push_back(array[i]);
